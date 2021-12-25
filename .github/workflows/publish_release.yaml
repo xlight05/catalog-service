@@ -15,13 +15,10 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-    - name: echo tag 
-      run: |
-        echo ${GITHUB_REF#refs/*/}
     - name: Docker Build
       run: |
         docker images
-        docker build -t bookstorecw1/catalog-svc:latest .
+        docker build -t bookstorecw1/catalog-svc:${GITHUB_REF#refs/*/} .
     - name: Docker push
       run: |
-        docker push bookstorecw1/catalog-svc:latest
+        docker push bookstorecw1/catalog-svc:${GITHUB_REF#refs/*/}
