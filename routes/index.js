@@ -17,6 +17,12 @@ const dummyBooks = [
     bookName: "HarryPotter3",
     author: "J.K.Rowling",
     price: "900"
+  },
+  {
+    id: "4",
+    bookName: "HarryPotter4",
+    author: "J.K.Rowling11",
+    price: "9000"
   }
 ];
 
